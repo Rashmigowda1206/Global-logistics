@@ -155,11 +155,11 @@ export const Sidebar: React.FC<SidebarProps> = () => {
         <div className="pt-2 border-t border-slate-800/60 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="w-6 h-6 rounded-full border bg-cyan-900/60 border-cyan-500/40 text-cyan-200 flex items-center justify-center text-[10px] font-mono font-bold">
-              PA
+              RG
             </div>
             <div className="flex flex-col">
               <span className="text-[11px] font-medium text-slate-200 leading-tight">
-                panchaksharayya12
+                Rashmigowda1206
               </span>
               <span className="text-[9px] text-slate-400">
                 Control Tower Lead

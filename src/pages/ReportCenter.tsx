@@ -227,7 +227,7 @@ export const ReportCenter: React.FC = () => {
           </div>
           <div className="flex items-center space-x-2 text-[11px] text-slate-400 font-mono">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Author: <strong className="text-cyan-300">panchaksharayya12</strong></span>
+            <span>Author: <strong className="text-cyan-300">Rashmigowda1206</strong></span>
             <span className="text-slate-600">|</span>
             <span className="text-slate-400">Folder: <code className="text-slate-300 bg-slate-900 px-1 py-0.5 rounded">C:\2026 A-Z\Global logistics</code></span>
           </div>

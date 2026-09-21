@@ -1,8 +1,8 @@
 -- ====================================================================
 -- SUPABASE POSTGRESQL DATABASE SCHEMA
 -- Project: TRANSITIQ — Global Logistics Control Tower
--- Author: panchaksharayya12
--- Repository: https://github.com/panchaksharayya12/Global-logistic-control.git
+-- Author: Rashmigowda1206
+-- Repository: https://github.com/Rashmigowda1206/Global-logistics.git
 -- ====================================================================
 
 -- Enable UUID extension

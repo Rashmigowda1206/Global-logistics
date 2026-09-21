@@ -9,9 +9,9 @@
 - **Live Production Website (Vercel)**: [https://global-logistic-control.vercel.app](https://global-logistic-control.vercel.app)
 - **Local Operational Dashboard**: [http://localhost:5173/](http://localhost:5173/)
 - **Interactive Report and Deliverables Center**: [http://localhost:5173/reports](http://localhost:5173/reports)
-- **Local Documents Folder**: `C:\2026 A-Z\Global logistics\`
+- **Dedicated Local Documents Folder**: `C:\2026 A-Z\Global logistics\`
+- **Author and Lead Engineer**: [Rashmigowda1206](https://github.com/Rashmigowda1206)
 - **GitHub Repository**: [https://github.com/Rashmigowda1206/Global-logistics.git](https://github.com/Rashmigowda1206/Global-logistics.git)
-- **Backup Repository**: [https://github.com/panchaksharayya12/Global-logistic-control.git](https://github.com/panchaksharayya12/Global-logistic-control.git)
 
 ---
 
@@ -25,10 +25,10 @@ Click the direct links below to download or view each document:
 
 | Deliverable | Format | Direct Download Links | Repository and Local Links | Description |
 | :--- | :---: | :--- | :--- | :--- |
-| **Global PPT** | `.pptx` (PowerPoint) | [Download Global_PPT.pptx](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_PPT.pptx) | - [View in Repository](./deliverables/Global_PPT.pptx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_PPT.pptx) | 16 executive slides covering system architecture, ML delay prediction, and operational ROI |
-| **Global Project Report** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Project_Report.docx)<br>[Download PDF](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Project_Report.pdf) | - [View in Repository (.docx)](./deliverables/Global_Project_Report.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Project_Report.docx) | 25+ page exhaustive technical specification covering data models, algorithms, and Supabase integration |
-| **Global Research Paper** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Research_Paper.docx)<br>[Download PDF](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Research_Paper.pdf) | - [View in Repository (.docx)](./deliverables/Global_Research_Paper.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Research_Paper.docx) | IEEE/ACM format paper on late delivery risk modeling, transit duration variance, and mitigation strategies |
-| **Global Review Paper** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Review_Paper.docx)<br>[Download PDF](https://github.com/panchaksharayya12/Global-logistic-control/raw/main/deliverables/Global_Review_Paper.pdf) | - [View in Repository (.docx)](./deliverables/Global_Review_Paper.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Review_Paper.docx) | Systematic survey of modern AI control towers, real-time IoT cargo visibility, and dynamic rerouting |
+| **Global PPT** | `.pptx` (PowerPoint) | [Download Global_PPT.pptx](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_PPT.pptx) | - [View in Repository](./deliverables/Global_PPT.pptx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_PPT.pptx) | 16 executive slides covering system architecture, ML delay prediction, and operational ROI |
+| **Global Project Report** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Project_Report.docx)<br>[Download PDF](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Project_Report.pdf) | - [View in Repository (.docx)](./deliverables/Global_Project_Report.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Project_Report.docx) | 25+ page exhaustive technical specification covering data models, algorithms, and Supabase integration |
+| **Global Research Paper** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Research_Paper.docx)<br>[Download PDF](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Research_Paper.pdf) | - [View in Repository (.docx)](./deliverables/Global_Research_Paper.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Research_Paper.docx) | IEEE/ACM format paper on late delivery risk modeling, transit duration variance, and mitigation strategies |
+| **Global Review Paper** | `.docx` and `.pdf` | [Download Word (.docx)](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Review_Paper.docx)<br>[Download PDF](https://github.com/Rashmigowda1206/Global-logistics/raw/main/deliverables/Global_Review_Paper.pdf) | - [View in Repository (.docx)](./deliverables/Global_Review_Paper.docx)<br>- [Open Local File](file:///C:/2026%20A-Z/Global%20logistics/Global_Review_Paper.docx) | Systematic survey of modern AI control towers, real-time IoT cargo visibility, and dynamic rerouting |
 
 ---
 
@@ -88,10 +88,9 @@ The web dashboard will be available at: **`http://localhost:5173/`**
 
 ---
 
-## Author and Repositories
+## Author and Copyright
 
-- **Repositories**:
-  - Main: [https://github.com/Rashmigowda1206/Global-logistics.git](https://github.com/Rashmigowda1206/Global-logistics.git)
-  - Backup: [https://github.com/panchaksharayya12/Global-logistic-control.git](https://github.com/panchaksharayya12/Global-logistic-control.git)
+- **Lead Engineer & Author**: [Rashmigowda1206](https://github.com/Rashmigowda1206)
+- **Repository**: [https://github.com/Rashmigowda1206/Global-logistics.git](https://github.com/Rashmigowda1206/Global-logistics.git)
 - **Local Deliverables Path**: `C:\2026 A-Z\Global logistics\`
 - All rights reserved.
