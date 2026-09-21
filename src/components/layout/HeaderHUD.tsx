@@ -8,12 +8,12 @@ import {
   CheckCircle2,
   AlertTriangle,
   X,
-  Building2,
-  Radio
+  Radio,
+  Clock,
+  ShieldCheck
 } from 'lucide-react';
 import { useNotifications } from '../../context/NotificationContext';
 import { useLogisticsFilter } from '../../context/FilterContext';
-import { usePlatform } from '../../context/PlatformContext';
 import { useNavigate } from 'react-router-dom';
 
 interface HeaderHUDProps {
@@ -28,9 +28,8 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
   onToggleFilters,
 }) => {
   const navigate = useNavigate();
-  const { mode, setMode } = usePlatform();
   const { alerts, unreadCount, markAsRead, setSelectedAlert } = useNotifications();
-  const { activeFilterCount, clearFilters } = useLogisticsFilter();
+  const { activeFilterCount, kpis } = useLogisticsFilter();
   const [showNotifications, setShowNotifications] = useState(false);
   const [timeUtc, setTimeUtc] = useState('');
 
@@ -49,43 +48,34 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
       {/* Left: Tagline & Telemetry Status */}
       <div className="flex items-center space-x-4">
         <div className="flex items-center space-x-2">
-          <div className={`w-2 h-2 rounded-full animate-ping ${mode === 'banking' ? 'bg-blue-400' : 'bg-cyan-400'}`}></div>
-          <span className={`font-mono text-xs font-semibold tracking-wider ${mode === 'banking' ? 'text-blue-300' : 'text-cyan-300'}`}>
-            {mode === 'banking' ? 'EUROBANK INTELLIGENCE' : 'NETWORK MONITOR'}
+          <div className="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></div>
+          <span className="font-mono text-xs font-semibold tracking-wider text-cyan-300">
+            NETWORK MONITOR
           </span>
         </div>
         <span className="text-slate-600 hidden sm:inline">|</span>
         <span className="text-xs text-slate-400 hidden lg:inline font-mono">
-          {mode === 'banking'
-            ? 'Customer Segmentation & Churn Analytics in European Banking (10,000 Accounts)'
-            : 'See the network. Predict the delay. Move smarter.'}
+          See the network. Predict the delay. Move smarter.
         </span>
       </div>
 
-      {/* Center: Suite Switcher */}
-      <div className="flex items-center space-x-2 bg-[#050914] p-1 rounded-lg border border-slate-800">
-        <button
-          onClick={() => setMode('banking')}
-          className={`flex items-center space-x-1.5 px-3 py-1 rounded text-xs font-mono transition-all ${
-            mode === 'banking'
-              ? 'bg-blue-600 text-white font-bold shadow-sm'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <Building2 className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">🏦 EuroBank Churn</span>
-        </button>
-        <button
-          onClick={() => setMode('logistics')}
-          className={`flex items-center space-x-1.5 px-3 py-1 rounded text-xs font-mono transition-all ${
-            mode === 'logistics'
-              ? 'bg-cyan-500 text-slate-950 font-bold shadow-sm'
-              : 'text-slate-400 hover:text-slate-200'
-          }`}
-        >
-          <Radio className="w-3.5 h-3.5" />
-          <span className="hidden sm:inline">🌐 TransitIQ Logistics</span>
-        </button>
+      {/* Center: Live Operational Health Indicators */}
+      <div className="hidden md:flex items-center space-x-4 bg-[#050914] px-3.5 py-1.5 rounded-lg border border-slate-800/80 font-mono text-xs">
+        <div className="flex items-center space-x-1.5">
+          <Radio className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+          <span className="text-slate-400">Terminals:</span>
+          <span className="text-cyan-300 font-bold">128 Global</span>
+        </div>
+        <span className="text-slate-700">|</span>
+        <div className="flex items-center space-x-1.5">
+          <span className="text-slate-400">On-Time SLA:</span>
+          <span className="text-emerald-400 font-bold">{kpis.onTimeRate}%</span>
+        </div>
+        <span className="text-slate-700">|</span>
+        <div className="flex items-center space-x-1.5">
+          <Clock className="w-3.5 h-3.5 text-slate-500" />
+          <span className="text-slate-300">{timeUtc}</span>
+        </div>
       </div>
 
       {/* Right: Search, Filter Toggle, Notifications & Actions */}
@@ -211,9 +201,9 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
         {/* Quick Simulator CTA */}
         <button
           onClick={() => navigate('/simulator')}
-          className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-md bg-gradient-to-r from-purple-600/30 to-blue-600/30 hover:from-purple-600/50 hover:to-blue-600/50 border border-purple-500/40 text-purple-200 text-xs font-medium transition-all shadow-hud-purple"
+          className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-md bg-gradient-to-r from-cyan-600/30 to-blue-600/30 hover:from-cyan-600/50 hover:to-blue-600/50 border border-cyan-500/40 text-cyan-200 text-xs font-medium transition-all shadow-hud"
         >
-          <Zap className="w-3.5 h-3.5 text-purple-300" />
+          <Zap className="w-3.5 h-3.5 text-cyan-300" />
           <span>Simulator</span>
         </button>
       </div>

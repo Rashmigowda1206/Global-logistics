@@ -3,7 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
-// If credentials are provided in .env, create live Supabase client; otherwise create stub
+// If credentials are provided in .env, create live Supabase client; otherwise operate in local mode
 export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseAnonKey);
 
 export const supabase = isSupabaseConfigured
@@ -11,34 +11,32 @@ export const supabase = isSupabaseConfigured
   : null;
 
 /**
- * Persist a What-If Retention Simulation to Supabase
+ * Persist a Logistics What-If Route Simulation to Supabase
  */
-export async function saveSimulationResult(params: {
-  interestBonus: number;
-  germanyCoverage: number;
-  multiProductDiscount: number;
-  reactivationBudget: number;
-  projectedChurnRate: number;
-  accountsSaved: number;
-  capitalSavedM: number;
+export async function saveLogisticsSimulation(params: {
+  scenarioName: string;
+  modalShiftPercent: number;
+  bufferDaysAdded: number;
+  projectedOnTimeRate: number;
+  projectedDelayReductionDays: number;
+  estimatedCostImpactUsd: number;
 }) {
   if (!supabase) {
-    console.log('[Supabase Demo Mode] Simulation saved locally:', params);
+    console.log('[Supabase Local Mode] Logistics simulation cached locally:', params);
     return { success: true, data: params, mode: 'local' };
   }
 
   try {
     const { data, error } = await supabase
-      .from('churn_simulations')
+      .from('what_if_simulations')
       .insert([
         {
-          interest_bonus: params.interestBonus,
-          germany_coverage: params.germanyCoverage,
-          bundle_discount: params.multiProductDiscount,
-          reactivation_budget_k: params.reactivationBudget,
-          projected_churn_rate: params.projectedChurnRate,
-          accounts_saved: params.accountsSaved,
-          capital_saved_m: params.capitalSavedM,
+          scenario_name: params.scenarioName,
+          modal_shift_percent: params.modalShiftPercent,
+          buffer_days_added: params.bufferDaysAdded,
+          projected_on_time_rate: params.projectedOnTimeRate,
+          projected_delay_reduction_days: params.projectedDelayReductionDays,
+          estimated_cost_impact_usd: params.estimatedCostImpactUsd,
           created_at: new Date().toISOString()
         }
       ]);
@@ -46,7 +44,29 @@ export async function saveSimulationResult(params: {
     if (error) throw error;
     return { success: true, data, mode: 'supabase' };
   } catch (err) {
-    console.warn('Error saving to Supabase, falling back to local:', err);
+    console.warn('[Supabase Fallback] Error saving to Supabase, running locally:', err);
+    return { success: false, error: err, mode: 'local' };
+  }
+}
+
+/**
+ * Fetch live shipments telemetry from Supabase
+ */
+export async function fetchLiveShipments() {
+  if (!supabase) {
+    return { success: true, data: null, mode: 'local' };
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('shipments')
+      .select('*')
+      .limit(500);
+
+    if (error) throw error;
+    return { success: true, data, mode: 'supabase' };
+  } catch (err) {
+    console.warn('[Supabase Fallback] Error fetching shipments from Supabase:', err);
     return { success: false, error: err, mode: 'local' };
   }
 }
