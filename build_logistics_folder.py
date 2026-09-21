@@ -18,8 +18,8 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle, PageBreak, KeepTogether
 
 TARGET_DIR = r"C:\2026 A-Z\Global logistics"
-AUTHOR_NAME = "panchaksharayya12"
-GITHUB_REPO = "https://github.com/panchaksharayya12/Global-logistic-control.git"
+AUTHOR_NAME = "Rashmigowda1206"
+GITHUB_REPO = "https://github.com/Rashmigowda1206/Global-logistics.git"
 
 os.makedirs(TARGET_DIR, exist_ok=True)
 os.makedirs(os.path.join(TARGET_DIR, "data"), exist_ok=True)
